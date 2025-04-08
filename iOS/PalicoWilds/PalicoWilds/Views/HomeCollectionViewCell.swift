@@ -11,27 +11,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let titleLabel = UILabel()
-    
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel])
-        stackView.systemLayoutSizeFitting(HomeCollectionViewCell.layoutFittingCompressedSize, withHorizontalFittingPriority: .defaultHigh, verticalFittingPriority: .defaultLow)
-        return stackView
-    }()
-    
     internal var image: UIImage? {
         get {
             return imageView.image
         } set {
             imageView.image = newValue
-        }
-    }
-    
-    internal var title: String? {
-        get {
-            return titleLabel.text
-        } set {
-            titleLabel.text = newValue
         }
     }
     
@@ -47,11 +31,5 @@ class HomeCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.frame = contentView.bounds
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-        titleLabel.text = nil
     }
 }

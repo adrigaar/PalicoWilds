@@ -31,16 +31,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     private func getScreenElements() {
         homeScreenElements = [
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark),
-            HomeScreenElement(title: "test", image: UIImage.checkmark)
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark),
+            HomeScreenElement(image: UIImage.checkmark)
         ]
     }
 
@@ -58,6 +58,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    }
 
 }
 
@@ -72,7 +76,6 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         let element = homeScreenElements[indexPath.row]
         cell.image = element.image
-        cell.title = element.title
         
         return cell
     }
